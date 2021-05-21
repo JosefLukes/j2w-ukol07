@@ -10,6 +10,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -50,11 +51,12 @@ public class VizitkaController {
 
     @GetMapping(path = "/nova")
     public Object formularNovaVizitka() {
-        return new ModelAndView("formular");
+        return new ModelAndView("formular")
+                .addObject("vizitka",new Vizitka());
     }
 
     @PostMapping(path = "/nova")
-    public Object novaVizitka(@ModelAttribute("vizitka") Vizitka vizitka, BindingResult bindingResult) {
+    public Object novaVizitka(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "nova";

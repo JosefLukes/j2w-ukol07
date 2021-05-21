@@ -11,22 +11,22 @@
 </head>
 <body>
 <div class="detail">
-    <form class="vizitka">
+    <form class="vizitka" method="post">
         <div class="row">
-            <label th:for="celeJmeno" >Jméno</label>
-            <input type="text" th:field="${vizitka.celeJmeno}" th:value="vizitka.celeJmeno" maxlength="100" required />
+            <label for="celeJmeno" >Jméno</label>
+            <input type="text" th:field="${vizitka.celeJmeno}" th:value="${vizitka.celeJmeno}" maxlength="100" required />
         </div>
         <div class="row">
             <label for="firma">Firma</label>
-            <input type="text" id="firma" name="firma" maxlength="100" required />
+            <input type="text" th:field="${vizitka.firma}" th:value="${vizitka.firma}" maxlength="100" required />
         </div>
         <div class="row">
-            <label for="ulice">Ulice a čísla</label>
-            <input type="text" id="ulice" name="ulice" maxlength="100" required />
+            <label for="ulice">Ulice a číslo popisné</label>
+            <input type="text" th:field="${vizitka.ulice}" th:value="${vizitka.ulice}" maxlength="100" required />
         </div>
         <div class="row">
             <label for="obec">Obec</label>
-            <input type="text" id="obec" name="obec" maxlength="100" required />
+            <input type="text" th:field="${vizitka.obec}" th:value="${vizitka.obec}" maxlength="100" required />
         </div>
         <div class="row">
             <label for="psc">PSČ</label>
@@ -34,15 +34,15 @@
         </div>
         <div class="row">
             <label for="email">E-mail <small>(volitelný)</small></label>
-            <input type="email" id="email" name="email" maxlength="100" />
+            <input type="email" th:field="${vizitka.email}" th:value="${vizitka.email}" maxlength="100" />
         </div>
         <div class="row">
             <label for="telefon">Telefon <small>(volitelný)</small></label>
-            <input type="tel" id="telefon" name="telefon"  maxlength="100"  />
+            <input type="tel" th:field="${vizitka.telefon}" th:value="${vizitka.telefon}"  maxlength="100"  />
         </div>
         <div class="row">
             <label for="web">Web <small>(volitelný)</small></label>
-            <input type="url" th:field="web" maxlength="100"  />
+            <input type="url" th:field="${vizitka.web}" th:value="${vizitka.web}" maxlength="100"  />
         </div>
         <div class="form-controls">
             <button type="submit">Odeslat</button>

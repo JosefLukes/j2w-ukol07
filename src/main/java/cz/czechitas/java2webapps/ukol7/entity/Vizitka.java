@@ -1,6 +1,8 @@
 package cz.czechitas.java2webapps.ukol7.entity;
 
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,34 +18,34 @@ public class Vizitka {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Max(100)
+    @Length(max = 100)
     @NotEmpty
     private String celeJmeno;
 
-    @Max(100)
+    @Length(max = 100)
     @NotEmpty
     private String firma;
 
-    @Max(100)
+    @Length(max = 100)
     @NotEmpty
     private String ulice;
 
-    @Max(100)
+    @Length(max = 100)
     @NotEmpty
     private String obec;
 
-    @Max(5)
+    @Length(max = 5)
     @NotEmpty
     private String psc;
 
-    @Max(100)
+    @Length(max = 100)
     @Email
     private String email;
 
-    @Max(20)
+    @Length(max = 100)
     private String telefon;
 
-    @Max(100)
+    @Length(max = 100)
     private String web;
 
     public String getCeleJmeno() {
