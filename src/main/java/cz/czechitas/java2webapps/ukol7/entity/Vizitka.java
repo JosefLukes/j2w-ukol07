@@ -7,9 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.*;
 
 @Entity
 public class Vizitka {
@@ -36,6 +34,7 @@ public class Vizitka {
 
     @Length(max = 5)
     @NotEmpty
+    @Pattern(regexp="[1-8]{1}[0-9]{4}",message="PSČ má 5 číslic, pouze Česká PSČ!")
     private String psc;
 
     @Length(max = 100)

@@ -59,10 +59,11 @@ public class VizitkaController {
     public Object novaVizitka(@ModelAttribute("vizitka") @Valid Vizitka vizitka, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return "nova";
+            return "formular";
         }
         vizitkaRepository.save(vizitka);
         return "redirect:/";
     }
 
+    
 }
