@@ -13,8 +13,8 @@
 <div class="detail">
     <form class="vizitka">
         <div class="row">
-            <label for="jmeno">Jméno</label>
-            <input type="text" id="jmeno" name="jmeno" maxlength="100" required />
+            <label th:for="celeJmeno" >Jméno</label>
+            <input type="text" th:field="${vizitka.celeJmeno}" th:value="vizitka.celeJmeno" maxlength="100" required />
         </div>
         <div class="row">
             <label for="firma">Firma</label>
@@ -42,7 +42,7 @@
         </div>
         <div class="row">
             <label for="web">Web <small>(volitelný)</small></label>
-            <input type="url" id="web" name="web" maxlength="100"  />
+            <input type="url" th:field="web" maxlength="100"  />
         </div>
         <div class="form-controls">
             <button type="submit">Odeslat</button>
