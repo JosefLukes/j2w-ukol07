@@ -91,6 +91,7 @@ public class VizitkaController<params> {
         if (bindingResult.hasErrors()) {
             return "formular";
         }
+
         vizitkaRepository.save(vizitka);
         return String.format("redirect:/%d", vizitka.getId());
     }

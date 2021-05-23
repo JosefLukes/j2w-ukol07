@@ -132,3 +132,9 @@ input {
 #psc {
     width: 10em;
 }
+img{
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    object-fit: contain;
+}
